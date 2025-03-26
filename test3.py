@@ -15,11 +15,11 @@ def main():
         return
     
     # 影像縮放 (使用不同插值法)
-    scale_factor = 2.0  # 縮放比例
-    resized_nearest = resize_image(image, scale_factor, cv2.INTER_NEAREST)
-    resized_linear = resize_image(image, scale_factor, cv2.INTER_LINEAR)
-    resized_cubic = resize_image(image, scale_factor, cv2.INTER_CUBIC)
-    resized_lanczos = resize_image(image, scale_factor, cv2.INTER_LANCZOS4)
+    resized_nearest = resize_image(image, 2.0, cv2.INTER_NEAREST)
+    resized_linear = resize_image(image, 2.0, cv2.INTER_LINEAR)
+    resized_area = resize_image(image, 2.0, cv2.INTER_AREA)
+    resized_cubic = resize_image(image, 2.0, cv2.INTER_CUBIC)
+    resized_lanczos = resize_image(image, 2.0, cv2.INTER_LANCZOS4)
     
     # 顯示原始影像
     cv2.imshow('Original Image', image)
@@ -27,6 +27,7 @@ def main():
     # 顯示縮放後的影像
     cv2.imshow('Resized - Nearest', resized_nearest)
     cv2.imshow('Resized - Linear', resized_linear)
+    cv2.imshow('Resized - Area', resized_area)
     cv2.imshow('Resized - Cubic', resized_cubic)
     cv2.imshow('Resized - Lanczos', resized_lanczos)
     
